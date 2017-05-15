@@ -1,6 +1,8 @@
-# Using Python programming to Play Grand Theft Auto 5
+# Using Python programming to Play Grand Theft Auto
 
-Explorations of Using Python to play Grand Theft Auto 5, mainly for the purposes of creating self-driving cars and other vehicles.
+''' This fork adapts the awesome pygta5 to Mac OS and will be used to explore better models '''
+
+Explorations of Using Python to play Grand Theft Auto, mainly for the purposes of creating self-driving cars and other vehicles.
 
 We read frames directly from the desktop, rather than working with the game's code itself. This means it works with more games than just GTA V, and it will basically learn (well, attempt to learn...) whatever you put in front of it based on the frames as input and key presses as output.
 
