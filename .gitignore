@@ -10,6 +10,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Models
+*.npy
+*.index
+*.meta
+*.data-00000-of-00001
+
 # Distribution / packaging
 .Python
 env/
@@ -60,4 +66,3 @@ docs/_build/
 
 # PyBuilder
 target/
-

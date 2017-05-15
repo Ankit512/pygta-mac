@@ -43,7 +43,7 @@ def right():
     #ReleaseKey(D)
     time.sleep(t_time)
     ReleaseKey(D)
-    
+
 model = alexnet(WIDTH, HEIGHT, LR)
 model.load(MODEL_NAME)
 
@@ -55,11 +55,11 @@ def main():
 
     paused = False
     while(True):
-        
+
         if not paused:
             # 800x600 windowed mode
             #screen =  np.array(ImageGrab.grab(bbox=(0,40,800,640)))
-            screen = grab_screen(region=(0,40,800,640))
+            screen = grab_screen(region=(0,43,640,520))
             print('loop took {} seconds'.format(time.time()-last_time))
             last_time = time.time()
             screen = cv2.cvtColor(screen, cv2.COLOR_BGR2GRAY)
@@ -68,8 +68,8 @@ def main():
             prediction = model.predict([screen.reshape(160,120,1)])[0]
             print(prediction)
 
-            turn_thresh = .75
-            fwd_thresh = 0.70
+            turn_thresh = .50
+            fwd_thresh = 0.38
 
             if prediction[1] > fwd_thresh:
                 straight()
@@ -85,23 +85,15 @@ def main():
         # p pauses game and can get annoying.
         if 'T' in keys:
             if paused:
+                print "Resumed"
                 paused = False
                 time.sleep(1)
             else:
+                print "Paused"
                 paused = True
                 ReleaseKey(A)
                 ReleaseKey(W)
                 ReleaseKey(D)
                 time.sleep(1)
 
-main()       
-
-
-
-
-
-
-
-
-
-
+main()
