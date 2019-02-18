@@ -1,3 +1,5 @@
+# This file or any other file executing the getkeys.py must be executed on terminal as the root user, i.e. sudo python create_training_data.py
+
 # create_training_data.py
 
 import numpy as np
